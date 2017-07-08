@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+    <!--bootstrap导航条-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">相册</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">全部相册<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="/uploading">上传</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">选择文件夹</label>
+                    <select class="form-control" name="dirs">
+                        <% for(var i = 0; i < name.length;i++){ %>
+                        <option value="<%= name[i] %>"><%= name[i] %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">请选择图片</label>
+                    <input type="file" id="exampleInputFile" name="picture" multiple>
+                </div>
+                <button type="submit" class="btn btn-default">上传</button>
+            </form>
+        </div>
+    </div>
+</body>
+<scrip src="/js/bootstrap.js"></scrip>
+</html>
